@@ -41,7 +41,8 @@
         ]
     },
     "devDependencies": {
-        "faker": "^6.6.6",
+        "faker": "^5.5.3",
+        "@jackfranklin/test-data-bot": "^1.4.0",
         "prettier": "^2.7.1"
     }
 }
