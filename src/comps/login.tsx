@@ -11,22 +11,23 @@ const Login = ({ onSubmit }: { onSubmit: Function }) => {
         const form = event.currentTarget
 
         const formElements = form.elements as typeof form.elements & {
-            username: HTMLInputElement
+            email: HTMLInputElement
             password: HTMLInputElement
         }
 
-        const { username, password } = formElements
+        const { email, password } = formElements
 
         onSubmit({
-            username: username.value,
+            email: email.value,
             password: password.value,
+            returnSecureToken: true,
         })
     }
     return (
         <form onSubmit={handleSubmit}>
             <div>
-                <label htmlFor="username-field">Username</label>
-                <input id="username-field" name="username" type="text" />
+                <label htmlFor="email-field">Email</label>
+                <input id="email-field" name="email" type="text" />
             </div>
             <div>
                 <label htmlFor="password-field">Password</label>

@@ -9,7 +9,7 @@ import Login from 'comps/login'
 
 const buildLoginForm = build({
     fields: {
-        username: fake((faker) => faker.internet.userName()),
+        email: fake((faker) => faker.internet.exampleEmail()),
         password: fake((faker) => faker.internet.password()),
     },
 })
@@ -17,15 +17,16 @@ const buildLoginForm = build({
 test('submitting the form calls onSubmit with username and password', async () => {
     const handleSubmit = jest.fn()
     render(<Login onSubmit={handleSubmit} />)
-    const { username, password } = buildLoginForm()
+    const { email, password } = buildLoginForm()
 
-    await userEvent.type(screen.getByLabelText(/username/i), username)
+    await userEvent.type(screen.getByLabelText(/email/i), email)
     await userEvent.type(screen.getByLabelText(/password/i), password)
     await userEvent.click(screen.getByRole('button', { name: /submit/i }))
 
     expect(handleSubmit).toHaveBeenCalledWith({
-        username,
+        email,
         password,
+        returnSecureToken: true,
     })
     expect(handleSubmit).toHaveBeenCalledTimes(1)
 })

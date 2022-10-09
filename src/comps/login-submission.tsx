@@ -81,9 +81,20 @@ const useFormSubmission = ({
 const LoginSubmission = () => {
     const [formData, setFormData] = React.useState(null)
     const { status, responseData, errorMessage } = useFormSubmission({
-        endpoint: 'https://auth-provider.example.com/api/login',
+        endpoint:
+            'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAUzRJ6RGgda7eJeiu-I1xkHZFDmNWTQK0',
         data: formData,
     })
+
+    React.useEffect(() => {
+        console.log(formData)
+
+        console.log(status)
+    }, [status])
+
+    React.useEffect(() => {
+        console.log('res', responseData)
+    }, [responseData])
 
     return (
         <>
