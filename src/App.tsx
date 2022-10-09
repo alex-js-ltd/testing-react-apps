@@ -1,10 +1,11 @@
 import React, { FC } from 'react'
 import Login from 'comps/login'
+import LoginSubmission from 'comps/login-submission'
 
 const App: FC = () => {
     return (
         <div>
-            <Login onSubmit={() => console.log('onSubmit')} />
+            <LoginSubmission />
         </div>
     )
 }
