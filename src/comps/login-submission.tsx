@@ -87,8 +87,7 @@ interface FormData {
 const LoginSubmission = () => {
     const [formData, setFormData] = React.useState<FormData | null>(null)
     const { status, responseData, errorMessage } = useFormSubmission({
-        endpoint:
-            'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAUzRJ6RGgda7eJeiu-I1xkHZFDmNWTQK0',
+        endpoint: `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${process.env.REACT_APP_API_KEY}`,
         data: formData,
     })
 
