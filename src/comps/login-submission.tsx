@@ -78,23 +78,19 @@ const useFormSubmission = ({
     return state
 }
 
+interface FormData {
+    email: string
+    password: string
+    returnSecureToken: boolean
+}
+
 const LoginSubmission = () => {
-    const [formData, setFormData] = React.useState(null)
+    const [formData, setFormData] = React.useState<FormData | null>(null)
     const { status, responseData, errorMessage } = useFormSubmission({
         endpoint:
             'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAUzRJ6RGgda7eJeiu-I1xkHZFDmNWTQK0',
         data: formData,
     })
-
-    React.useEffect(() => {
-        console.log(formData)
-
-        console.log(status)
-    }, [status])
-
-    React.useEffect(() => {
-        console.log('res', responseData)
-    }, [responseData])
 
     return (
         <>
@@ -103,7 +99,7 @@ const LoginSubmission = () => {
                     Welcome <strong>{responseData.username}</strong>
                 </div>
             ) : (
-                <Login onSubmit={(data: any) => setFormData(data)} />
+                <Login onSubmit={(data: FormData) => setFormData(data)} />
             )}
             <div style={{ height: 200 }}>
                 {status === 'pending' ? <Spinner /> : null}
