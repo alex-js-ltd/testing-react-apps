@@ -95,7 +95,7 @@ const LoginSubmission = () => {
         <>
             {status === 'resolved' ? (
                 <div>
-                    Welcome <strong>{responseData.username}</strong>
+                    Welcome <strong>{responseData.email}</strong>
                 </div>
             ) : (
                 <Login onSubmit={(data: FormData) => setFormData(data)} />

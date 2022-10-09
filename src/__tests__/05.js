@@ -19,7 +19,7 @@ const buildLoginForm = build({
     },
 })
 
-test(`logging in displays the user's username`, async () => {
+test(`logging in displays the user's email`, async () => {
     render(<Login />)
     const { email, password } = buildLoginForm()
 })
