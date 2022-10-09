@@ -1,17 +1,20 @@
+// Avoid implementation details
+// 💯 use userEvent
 // https://testing-playground.com/
 import * as React from 'react'
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import Counter from 'comps/counter'
 
-test('counter increments and decrements when the buttons are clicked', () => {
+test('counter increments and decrements when the buttons are clicked', async () => {
     render(<Counter />)
     const increment = screen.getByRole('button', { name: /increment/i })
     const decrement = screen.getByRole('button', { name: /decrement/i })
     const message = screen.getByText(/current count/i)
 
     expect(message).toHaveTextContent('Current count: 0')
-    fireEvent.click(increment)
+    await userEvent.click(increment)
     expect(message).toHaveTextContent('Current count: 1')
-    fireEvent.click(decrement)
+    await userEvent.click(decrement)
     expect(message).toHaveTextContent('Current count: 0')
 })

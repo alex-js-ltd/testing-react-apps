@@ -4,7 +4,7 @@
 
 import React, { FC, FormEvent } from 'react'
 
-const Login: React.FC<{ onSubmit: Function }> = ({ onSubmit }) => {
+const Login: FC<{ onSubmit: Function }> = ({ onSubmit }) => {
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
 
