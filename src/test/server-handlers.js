@@ -6,21 +6,24 @@ const handlers = [
     rest.post(
         `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${process.env.REACT_APP_API_KEY}`,
         async (req, res, ctx) => {
-            if (!req.body.password) {
+            let body = await req.json()
+
+            if (!body.password) {
                 return res(
                     ctx.delay(delay),
                     ctx.status(400),
                     ctx.json({ error: { message: 'password required' } })
                 )
             }
-            if (!req.body.email) {
+            if (!body.email) {
                 return res(
                     ctx.delay(delay),
                     ctx.status(400),
                     ctx.json({ error: { message: 'email required' } })
                 )
             }
-            return res(ctx.delay(delay), ctx.json({ email: req.body.email }))
+
+            return res(ctx.delay(delay), ctx.json({ email: body.email }))
         }
     ),
 ]
