@@ -66,6 +66,7 @@ const useFormSubmission = ({
                 })
                 .then(async (response) => {
                     const data = await response.json()
+                    console.log(data)
                     if (response.ok) {
                         dispatch({ type: 'RESOLVE', responseData: data })
                     } else {
