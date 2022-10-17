@@ -66,11 +66,11 @@ const useFormSubmission = ({
                 })
                 .then(async (response) => {
                     const data = await response.json()
-                    console.log(data)
+
                     if (response.ok) {
                         dispatch({ type: 'RESOLVE', responseData: data })
                     } else {
-                        dispatch({ type: 'REJECT', error: data })
+                        dispatch({ type: 'REJECT', error: data.error })
                     }
                 })
         }
@@ -91,6 +91,10 @@ const LoginSubmission = () => {
         endpoint: `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${process.env.REACT_APP_API_KEY}`,
         data: formData,
     })
+
+    React.useEffect(() => {
+        console.log('error', errorMessage)
+    }, [errorMessage])
 
     return (
         <>

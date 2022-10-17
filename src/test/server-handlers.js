@@ -10,14 +10,14 @@ const handlers = [
                 return res(
                     ctx.delay(delay),
                     ctx.status(400),
-                    ctx.json({ message: 'password required' })
+                    ctx.json({ error: { message: 'password required' } })
                 )
             }
             if (!req.body.email) {
                 return res(
                     ctx.delay(delay),
                     ctx.status(400),
-                    ctx.json({ message: 'email required' })
+                    ctx.json({ error: { message: 'email required' } })
                 )
             }
             return res(ctx.delay(delay), ctx.json({ email: req.body.email }))
