@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { ButtonHTMLAttributes } from 'react'
 import { useTheme } from './theme'
 
 interface Dark {
@@ -27,7 +27,7 @@ const styles: Style = {
     },
 }
 
-const EasyButton = (props: [x: string]) => {
+const EasyButton = (props: ButtonHTMLAttributes<HTMLButtonElement>) => {
     const { theme } = useTheme()
 
     return <button style={styles[theme]} {...props} />
