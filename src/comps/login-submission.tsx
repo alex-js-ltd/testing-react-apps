@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useEffect } from 'react'
 import Login from './login'
 import Spinner from './spinner'
 
@@ -53,7 +53,7 @@ const useFormSubmission = ({
 
     const fetchBody = data ? JSON.stringify(data) : null
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (fetchBody) {
             dispatch({ type: 'START' })
             window
@@ -92,7 +92,7 @@ const LoginSubmission = () => {
         data: formData,
     })
 
-    React.useEffect(() => {
+    useEffect(() => {
         console.log('error', errorMessage)
     }, [errorMessage])
 
