@@ -1,13 +1,13 @@
-import React, { FC } from 'react'
+import React from 'react'
 import Login from 'comps/login'
 import LoginSubmission from 'comps/login-submission'
 import EasyButton from 'comps/easy-button'
 
-const App: FC = () => {
+const App = () => {
     return (
         <div>
             <LoginSubmission />
-            <EasyButton x={'hello'} />
+            <EasyButton />
         </div>
     )
 }
