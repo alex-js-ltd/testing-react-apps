@@ -15,7 +15,9 @@ const EasyButton = () => (
     <ThemeProvider initialTheme="light">
         <h1>Hit the easy button!</h1>
         <hr />
-        <EasyButtonComp onClick={() => alert('that was easy')} value="Easy!" />
+        <EasyButtonComp onClick={() => alert('that was easy')}>
+            Easy!
+        </EasyButtonComp>
 
         <hr />
         <ThemeToggler />
