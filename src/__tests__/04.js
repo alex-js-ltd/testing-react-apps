@@ -2,10 +2,10 @@
 // 💯 use Test Data Bot
 
 import * as React from 'react'
-import { render, screen } from '@testing-library/react'
+import { render, screen } from 'test/test-utils'
 import userEvent from '@testing-library/user-event'
 const { build, fake } = require('@jackfranklin/test-data-bot')
-import Login from 'comps/login'
+import { Login } from 'comps/login'
 
 const buildLoginForm = build({
     fields: {

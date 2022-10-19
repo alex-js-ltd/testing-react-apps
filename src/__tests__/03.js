@@ -2,7 +2,7 @@
 // 💯 use userEvent
 // https://testing-playground.com/
 import * as React from 'react'
-import { render, screen } from '@testing-library/react'
+import { render, screen } from 'test/test-utils'
 import userEvent from '@testing-library/user-event'
 import Counter from 'comps/counter'
 
