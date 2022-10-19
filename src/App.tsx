@@ -1,15 +1,19 @@
 import React from 'react'
-import Login from 'comps/login'
-import LoginSubmission from 'comps/login-submission'
-import EasyButton from 'comps/easy-button'
+import { Routes, Route } from 'react-router-dom'
+
+import { Counter, Login, LoginSubmission, EasyButton } from 'screens'
+
+const AppRoutes = () => (
+    <Routes>
+        <Route path="/counter" element={<Counter />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/login-submission" element={<LoginSubmission />} />
+        <Route path="/easy-button" element={<EasyButton />} />
+    </Routes>
+)
 
 const App = () => {
-    return (
-        <div>
-            <LoginSubmission />
-            <EasyButton />
-        </div>
-    )
+    return <AppRoutes />
 }
 
 export default App

@@ -40,4 +40,4 @@ const Login = ({ onSubmit }: { onSubmit: Function }) => {
     )
 }
 
-export default Login
+export { Login }

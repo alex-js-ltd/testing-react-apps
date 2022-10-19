@@ -33,4 +33,4 @@ const EasyButton = (props: ButtonHTMLAttributes<HTMLButtonElement>) => {
     return <button style={styles[theme]} {...props} />
 }
 
-export default EasyButton
+export { EasyButton }

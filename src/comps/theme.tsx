@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState, ReactNode } from 'react'
 
-type Theme = 'light' | 'dark'
+export type Theme = 'light' | 'dark'
 
 const ThemeContext = createContext<
     { theme: Theme; setTheme: Function } | undefined
@@ -16,7 +16,10 @@ const useTheme = () => {
     return context
 }
 
-type ThemeProviderProps = { initialTheme: Theme; children: ReactNode }
+type ThemeProviderProps = {
+    initialTheme: Theme
+    children: ReactNode[]
+}
 
 const ThemeProvider = ({
     initialTheme = 'light',

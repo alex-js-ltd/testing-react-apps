@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import Login from './login'
+import { Login } from './login'
 import Spinner from './spinner'
 
 type Action =
@@ -91,10 +91,6 @@ const LoginSubmission = () => {
         endpoint: `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${process.env.REACT_APP_API_KEY}`,
         data: formData,
     })
-
-    useEffect(() => {
-        console.log('error', errorMessage)
-    }, [errorMessage])
 
     return (
         <>
