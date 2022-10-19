@@ -18,7 +18,7 @@ const useTheme = () => {
 
 type ThemeProviderProps = {
     initialTheme: Theme
-    children: ReactNode[]
+    children: ReactNode
 }
 
 const ThemeProvider = ({

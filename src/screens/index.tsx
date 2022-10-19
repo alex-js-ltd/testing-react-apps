@@ -12,7 +12,7 @@ const onSubmit = ({ email, password, returnSecureToken }: Props) =>
 const Login = () => <LoginComp onSubmit={onSubmit} />
 
 const EasyButton = () => (
-    <ThemeProvider initialTheme="light">
+    <>
         <h1>Hit the easy button!</h1>
         <hr />
         <EasyButtonComp onClick={() => alert('that was easy')}>
@@ -21,7 +21,7 @@ const EasyButton = () => (
 
         <hr />
         <ThemeToggler />
-    </ThemeProvider>
+    </>
 )
 
 const ThemeToggler = () => {

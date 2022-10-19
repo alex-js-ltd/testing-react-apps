@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { render as rtlRender } from '@testing-library/react'
-import { ThemeProvider } from 'comps/theme'
+import { AppProviders } from 'context'
 
 const render = (ui, { theme = 'light', ...options } = {}) => {
     const Wrapper = ({ children }) => (
-        <ThemeProvider initialTheme={theme}>{children}</ThemeProvider>
+        <AppProviders theme={theme}>{children}</AppProviders>
     )
     return rtlRender(ui, { wrapper: Wrapper, ...options })
 }
