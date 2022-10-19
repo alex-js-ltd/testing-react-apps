@@ -1,9 +1,17 @@
-import * as React from 'react'
+import React, { ReactElement, ReactNode } from 'react'
 import { render as rtlRender } from '@testing-library/react'
 import { AppProviders } from 'context'
+import { Theme } from 'comps/theme'
 
-const render = (ui, { theme = 'light', ...options } = {}) => {
-    const Wrapper = ({ children }) => (
+type Props = {
+    theme?: Theme
+}
+
+const render = (
+    ui: ReactElement,
+    { theme = 'light', ...options }: Props = {}
+) => {
+    const Wrapper = ({ children }: { children: ReactNode }) => (
         <AppProviders theme={theme}>{children}</AppProviders>
     )
     return rtlRender(ui, { wrapper: Wrapper, ...options })
