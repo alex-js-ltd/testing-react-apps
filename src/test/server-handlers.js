@@ -4,7 +4,7 @@ const delay = process.env.NODE_ENV === 'test' ? 0 : 1500
 
 const handlers = [
     rest.post(
-        `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${process.env.REACT_APP_API_KEY}`,
+        `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword`,
         async (req, res, ctx) => {
             let body = await req.json()
 
