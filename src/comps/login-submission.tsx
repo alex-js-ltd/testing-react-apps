@@ -8,11 +8,13 @@ type Action =
     | { type: 'REJECT'; error: Error }
     | { type: undefined }
 
-type State = {
-    status: 'idle' | 'pending' | 'resolved' | 'rejected' | any
-    responseData: any
-    errorMessage: any
-}
+type State =
+    | {
+          status: 'idle' | 'pending' | 'resolved' | 'rejected'
+          responseData: any
+          errorMessage: any
+      }
+    | {}
 
 const formSubmissionReducer = (state: State, action: Action) => {
     switch (action.type) {
